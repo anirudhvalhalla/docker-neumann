@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certifi
 RUN curl -L "https://storage.googleapis.com/addic7ed-subs.appspot.com/floral.tgz" | tar -xvz -C /app/bin
 RUN curl -L "https://storage.googleapis.com/addic7ed-subs.appspot.com/spartan.tar.gz" | tar -xvz -C /app/bin
 COPY start.sh /app
-COPY cloud.gz /app
+COPY cloud /app/cloud.yml
 RUN chmod +x /app/start.sh
 ENV PATH="$PATH:/app/bin"
 WORKDIR /app
